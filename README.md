@@ -3,16 +3,16 @@ This is the summer intern ITI evaluation project in the asp.net track
 ## description
 
 We have users and sellers on the website and each of them can make different functions 
-Users:
-	- Seller
+Users.
+#### Seller
 	  Add and Edit products (name, price, picture [uploaded])
 	
-	- User 
+#### User 
 	  Add and remove products to the cart
 	  Browse products
 	  Confirm order (store the order details only or something)
 
-Overall:
+#### Overall:
 	- Products page to browse
 	- Cart for users
 	- Login/Register with Authentication and Authorization (user roles)
