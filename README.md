@@ -20,7 +20,7 @@ Users.
 	- Modify my Products (Sllers only)
  
 ## How to use it after downloading it
-* 1- Open the MarketDBContext file in models and change this "Server=DESKTOP-JTPRIP3\\MSSQLSERVER01" to your server name in the Microsoft SQL server
-* 2- Make "add-migration initial" in the package manager console
-* 3- Make "update-database" in the package manager console
-* 4 -Run the program and Open the https://localhost:44325/
+  1- Open the MarketDBContext file in models and change this "Server=DESKTOP-JTPRIP3\\MSSQLSERVER01" to your server name in the Microsoft SQL server <br />
+  2- Make "add-migration initial" in the package manager console <br />
+  3- Make "update-database" in the package manager console <br />
+  4 -Run the program and Open the https://localhost:44325/ <br />
