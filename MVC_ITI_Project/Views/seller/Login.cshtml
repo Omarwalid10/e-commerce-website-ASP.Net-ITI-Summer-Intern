@@ -1,0 +1,48 @@
+﻿@model Seller
+
+@{
+
+}
+
+<div class="hero">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-lg-5">
+				<div class="intro-excerpt">
+					<h1>Login </h1>
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="hero-img-wrap">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="display: flex; justify-content: center; align-items: center; margin: 50px;">
+	@*when form take image you should write this enctype="multipart/form-data*@
+	<form style="width: 50%;" method="post" asp-action="index">
+
+	 
+		<input type="text" id="form1Example1" class="form-control" asp-for=Name value="anything" hidden/>
+		 
+		<div class="form-outline mb-4">
+			<input type="text" id="form1Example2" class="form-control" asp-for=Email value=@Model?.Email />
+			<label class="form-label" for="form1Example2">Email</label>
+		</div>
+		<div class="form-outline mb-4">
+			<input type="password" id="form1Example2" class="form-control" asp-for=password value=@Model?.password />
+			<label class="form-label" for="form1Example2">password</label>
+		</div>
+
+
+		<!-- Submit button -->
+		<button type="submit" class="btn btn-primary btn-block">Login</button>
+	</form>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

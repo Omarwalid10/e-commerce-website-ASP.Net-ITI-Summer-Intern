@@ -1,0 +1,38 @@
+﻿<div class="hero">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-lg-5">
+				<div class="intro-excerpt">
+					<h1>Add New Product </h1>
+				 
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="hero-img-wrap">
+				 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@model  Seller
+<div style="display: flex; justify-content: center; align-items: center; margin: 50px;">
+	<form style="width: 50%;" method="post" asp-controller="products" asp-action="Save">
+		<input type="number" name="Id" value="@Model.Id" hidden/>
+		<div class="form-outline mb-4">
+			<input type="text" id="form1Example1" class="form-control" asp-for=Name/>
+			<label class="form-label" for="form1Example1">Name</label>
+		</div>
+		<div class="form-outline mb-4">
+			<input type="number" id="form1Example2" class="form-control"  />
+			<label class="form-label" for="form1Example2">price</label>
+		</div>
+		<div class="form-outline mb-4">
+			<input type="text" id="form1Example2" class="form-control" />
+			<label class="form-label" for="form1Example2">image</label>
+		</div>
+
+		<!-- Submit button -->
+		<button type="submit" class="btn btn-primary btn-block">Save</button>
+	</form>
+</div>

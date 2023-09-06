@@ -1,0 +1,17 @@
+﻿@model Product
+
+<div class="form-outline mb-4">
+	<label class="form-label" for="form1Example1">Name</label>
+	<input type="text" id="form1Example1" class="form-control" asp-for=name value=@Model?.name />
+	<span asp-validation-for="name" class="text-danger">Name must be more than 2 characters </span>
+</div>
+<div class="form-outline mb-4">
+	<label class="form-label" for="form1Example2">price</label>
+	<input type="number" id="form1Example2" class="form-control" asp-for=price value=@Model?.price />
+	<span asp-validation-for="price" class="text-danger">price must be more than 5</span>
+</div>
+		@* there is no image in ImageFile because I make it not save in database *@
+<div class="form-outline mb-4">
+	<label class="form-label" for="form1Example2">image</label>
+	<input type="file" id="form1Example2" class="form-control" asp-for="ImageFile" value=@Model?.ImageFile />
+</div>

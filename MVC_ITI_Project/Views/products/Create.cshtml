@@ -1,0 +1,39 @@
+﻿@model MVC_ITI_Project.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+    int sellerId = ViewBag.Id ;
+}
+
+<div class="hero">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-lg-5">
+				<div class="intro-excerpt">
+					<h1>Add New Product </h1>
+				 
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="hero-img-wrap">
+				 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+<div style="display: flex; justify-content: center; align-items: center; margin: 50px;">
+	@* when form take image you should write this enctype="multipart/form-data *@
+	<form style="width: 50%;" method="post" asp-controller="products" asp-action="Save" enctype="multipart/form-data">
+		<input type="number" value="@sellerId" hidden asp-for="sellerId" />
+		<input type="text" value="anyvalue" hidden asp-for=image />
+		<partial name="_PartialCreateAndEdit" model="Model" />
+		<!-- Submit button -->
+		<button type="submit" class="btn btn-primary btn-block">Save</button>
+	</form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

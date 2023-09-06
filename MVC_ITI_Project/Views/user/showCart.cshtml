@@ -1,0 +1,53 @@
+﻿@model List<Product>
+<div class="hero">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-lg-5">
+				<div class="intro-excerpt">
+					<h1 style="color:white">Your <span clsas="d-block">Cart</span></h1>
+					<p> click on the product to delete it from your cart</p>
+					@* <p><a class="btn btn-secondary me-2">Show Cart</a></p> *@
+				</div>
+			</div>
+			<div class="col-lg-7">
+				<div class="hero-img-wrap">
+					<img src="/images/couch.png" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@if (Model.Count>0)
+{
+	<div class="untree_co-section product-section before-footer-section">
+		<div class="container">
+			<div class="row">
+				<h1 style="text-align:center">Products</h1>
+				@foreach (var item in Model)
+				{
+					@* <li>@item.price</li>
+						<li>@item.name</li> *@
+					<!-- Start Column 1 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5">
+						<a class="product-item" asp-action="deleteProductCart" asp-route-productId=@item.Id asp-route-userId=@ViewBag.Id>
+							<img src="/images/Uploads/@item.image" class="img-fluid product-thumbnail">
+							<h3 class="product-title">@item.name</h3>
+							<strong class="product-price">@item.price</strong>
+
+							<span class="icon-cross">
+								<img src="/images/return.svg" class="img-fluid">
+								@* <button  class="btn btn-primary btn-block">Login</button> *@
+							</span>
+						</a>
+					</div>
+				}
+				<h1>Total Price: @ViewBag.sum</h1>
+			</div>
+			<a  class="btn btn-primary btn-block" onclick="alert('Buy Success')"asp-controller="user" asp-action="Buy" asp-route-userId=@ViewBag.Id>Buy Now</a>
+		</div>
+	</div>
+}
+else{
+	<h1>The Cart is Empty</h1>
+}
